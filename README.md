@@ -3,10 +3,41 @@
 
 print your directory on shell and clipboard.
 
-## Get Start
+## Get Started
+
+- Bash
 ```sh
 npm i -g print-dir
 pdir [-t ./theme.json] [-d .] [--igd "node,theme"] [--sort dir] [-o ./out.txt] [-m 5]
+```
+
+- Package
+```js
+var dirTree  = require('print-dir')
+
+let treeData = dirTree({
+    dir: '.',
+    theme: {
+       "node": "├── ",
+       "pipe": "│   ",
+       "last": "└── ",
+       "indent": "    ",
+       "dir_suffix": "/"
+    },
+    maxLev: 2,
+    ignoresFile: [],
+    ignoresDir: [],
+    prefix: " ",
+    isLine: false, // don't print line by line
+    sort: ""
+})
+/*
+ return 
+treeData.treeString
+treeData.infoString
+treeData.fileNum
+treeData.dirNum
+*/
 ```
 
 ## Default Options
