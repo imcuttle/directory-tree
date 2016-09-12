@@ -1,0 +1,7 @@
+{
+    "node": "├── ",
+    "pipe": "│   ",
+    "last": "└── ",
+    "indent": "    ",
+    "dir_suffix": "/"
+}
