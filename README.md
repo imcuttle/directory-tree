@@ -6,7 +6,7 @@ npm i -g print-dir
 pdir [-t ./theme.json] [-d .] [--igd "node,theme"] [--sort dir] [-o ./out.txt] [-m 5]
 ```
 
-```json
+```js
 const default_options = {
 
     t: path.resolve(__dirname, "./themes/default.json"), // theme of char
