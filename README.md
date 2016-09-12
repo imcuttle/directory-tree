@@ -1,6 +1,8 @@
 
 # directory-tree
 
+print your directory on shell and clipboard.
+
 ## Get Start
 ```sh
 npm i -g print-dir
