@@ -1,6 +1,6 @@
 {
   "name": "print-dir",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "print directory",
   "main": "index.js",
   "scripts": {

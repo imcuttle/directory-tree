@@ -12,7 +12,7 @@ var dirTree  = require('./index')
 const default_options = {
 
     t: path.resolve(__dirname, "./themes/default.json"), // theme of char
-    d: process.cwd(),           // directory
+    d: '.',                     // directory
     igf: "",                    // ignores files
     igd: "",                    // ignores dirs
     prefix: '',                 // prefix of each line
