@@ -7,7 +7,7 @@ const path   =  require('path')
 const colors =  require('colors/safe')
 
 const NL = "\n"
-let SP = " "
+let SP = ""
 let fileNum = 0, dirNum = 0
 
 function generateInfoStr(fileNum, dirNum) {
@@ -70,8 +70,7 @@ function newLine(string) {
 
 
 function generateDirectoryStr(dirname, theme, maxLev, ignoresDir=[], ignoresFile=[],
-                              isLine, sort, level=1, depth=[], SP=' ') {
-
+                              isLine, sort, level=1, depth=[], SP='') {
     function makeFileLineStr(depth, isLast, stat) {
 
         return SP + depth.join('')
