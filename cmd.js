@@ -9,6 +9,7 @@ const path   =  require('path')
 const colors =  require('colors/safe')
 var dirTree  = require('./index')
 
+
 const default_options = {
 
     t: path.resolve(__dirname, "./themes/default.json"), // theme of char
@@ -96,6 +97,8 @@ try {
 } catch (ex) {
     console.error(ex);
 }
+
+console.log(ignoresDir, ignoresFile, args)
 
 function isDir(file) {
     return fs.statSync(file).isDirectory()

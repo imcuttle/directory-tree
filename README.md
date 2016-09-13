@@ -47,8 +47,8 @@ const default_options = {
 
     t: path.resolve(__dirname, "./themes/default.json"), // theme of char
     d: process.cwd(),           // directory
-    igf: "",                    // ignores files
-    igd: "",                    // ignores dirs
+    igf: "",                    // ignores files (regular expression matching)
+    igd: "",                    // ignores dirs (regular expression matching)
     prefix: '',                 // prefix of each line
     pa: false,                  // print all at once
     sort: ''                    // file sort by "file"/"dir", default is sort by filename.

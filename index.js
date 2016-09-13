@@ -17,13 +17,17 @@ function generateInfoStr(fileNum, dirNum) {
 
 function isIgnoredFile(filename, ignoresFile) {
     return ignoresFile.some(m => {
-        return filename.indexOf(m) >= 0
+        if(m == '')
+            return false;
+        return new RegExp(m).test(filename)
     })
 }
 
 function isIgnoredDir(dirname, ignoresDir) {
     return ignoresDir.some(m => {
-        return dirname.indexOf(m) >= 0
+        if(m == '')
+            return false;
+        return new RegExp(m).test(dirname)
     })
 }
 
