@@ -90,7 +90,7 @@ function generateDirectoryStr(dirname, theme, maxLev, ignoresDir=[], ignoresFile
     
     let stats = filenames.reduce((c, f) => {
 
-        let stat = fs.statSync(path.join(dirname, f))
+        let stat = fs.lstatSync(path.join(dirname, f))
 
         stat.name = f
 

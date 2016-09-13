@@ -93,15 +93,20 @@ try {
             )
         )
     })
+    var a = {
+    headers: {
+        referer: ''//.... 表示请求来自哪儿的
+    }
+}
+
 
 } catch (ex) {
     console.error(ex);
 }
 
-console.log(ignoresDir, ignoresFile, args)
 
 function isDir(file) {
-    return fs.statSync(file).isDirectory()
+    return fs.lstatSync(file).isDirectory()
 }
 
 function newLine(string) {
