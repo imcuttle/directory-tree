@@ -8,7 +8,7 @@ print your directory on shell and clipboard.
 - Bash
 ```sh
 npm i -g print-dir
-pdir [-t ./theme.json] [-d .] [--igd "node,theme"] [--sort dir] [-o ./out.txt] [-m 5]
+pdir [.] [-t ./theme.json] [--igd "node,theme"] [--sort dir] [-o ./out.txt] [-m 5]
 ```
 
 - Package
@@ -46,7 +46,7 @@ treeData.dirNum
 const default_options = {
 
     t: path.resolve(__dirname, "./themes/default.json"), // theme of char
-    d: process.cwd(),           // directory
+    _: [process.cwd()],           // directory
     igf: "",                    // ignores files (regular expression matching)
     igd: "",                    // ignores dirs (regular expression matching)
     prefix: '',                 // prefix of each line

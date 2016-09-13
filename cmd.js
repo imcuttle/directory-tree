@@ -9,11 +9,16 @@ const path   =  require('path')
 const colors =  require('colors/safe')
 var dirTree  = require('./index')
 
+if(args._.length == 0 || args._[0] == '') {
+    delete args._
+} else {
+    args._[0] = args._[0].toString()
+}
 
 const default_options = {
 
     t: path.resolve(__dirname, "./themes/default.json"), // theme of char
-    d: '.',                     // directory
+    _: ['.'],                   // directory
     igf: "",                    // ignores files
     igd: "",                    // ignores dirs
     prefix: '',                 // prefix of each line
@@ -37,7 +42,7 @@ try {
 
     theme = JSON.parse(fs.readFileSync(options.t).toString())
     out     = options.o
-    dir     = options.d
+    dir     = options._[0]
     maxLev  = options.m
     isLine  = !options.pa
     ignoresFile = options.igf.split(',').filter(x=>x!='')
@@ -117,4 +122,3 @@ function pbcopy(data, callback) {
     var ncp = require("copy-paste");
     ncp.copy(data, callback)
 }
-
