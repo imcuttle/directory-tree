@@ -75,8 +75,8 @@ function newLine(string) {
 
 function generateDirectoryStr(dirname, theme, maxLev, ignoresDir=[], ignoresFile=[],
                               isLine, sort, level=1, depth=[], SP='') {
+    
     function makeFileLineStr(depth, isLast, stat) {
-
         return SP + depth.join('')
             + (isLast?theme.last:theme.node)
             + stat.name + (stat.isFile()?"":theme.dir_suffix);

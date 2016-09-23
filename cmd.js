@@ -7,7 +7,7 @@ const args   =  require('minimist')(process.argv.slice(2))
 const fs     =  require('fs')
 const path   =  require('path')
 const colors =  require('colors/safe')
-var dirTree  = require('./index')
+var dirTree  =  require('./index')
 
 if(args._.length == 0 || args._[0] == '') {
     delete args._
