@@ -98,12 +98,6 @@ try {
             )
         )
     })
-    var a = {
-    headers: {
-        referer: ''//.... 表示请求来自哪儿的
-    }
-}
-
 
 } catch (ex) {
     console.error(ex);
