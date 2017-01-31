@@ -9,10 +9,29 @@ const path   =  require('path')
 const colors =  require('colors/safe')
 var dirTree  =  require('./index')
 
-if(args._.length == 0 || args._[0] == '') {
+if (args._.length == 0 || args._[0] == '') {
     delete args._
 } else {
     args._[0] = args._[0].toString()
+}
+
+if (args.h || args.help) {
+    console.log([
+            '',
+            '  Usage: pdir [path] --options',
+            '', '',
+            '  Options: ',
+            '',
+            '    --igf <files>           ignored files,"a.txt,b.png"',
+            '    --igd <directories>     ignored directories,"node_modules"',
+            '    --sort <type>           file sort by "file/dir", default is sort by filename',
+            '    --pa                    print all at once',
+            '    -m <depth>              max depth of print tree',
+            '    -o <path>               store where. eg. "./out.txt"',
+            '    -t <path>               file of print directory string\'s character.',
+            '                            default: "'+path.resolve(__dirname, "./themes/default.json")
+    ].join('\r\n'))
+    return;
 }
 
 const default_options = {
@@ -85,17 +104,13 @@ try {
     if(out) {
         fs.writeFileSync(out, data);
         console.log(
-            colors.white(
-                `stored into file ${out}.`
-            )
+            `stored into file ${out}.`
         )
     }
 
     pbcopy(data, () => {
         console.log(
-            colors.white(
-                "copied!"
-            )
+            "copied!"
         )
     })
 

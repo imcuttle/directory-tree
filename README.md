@@ -8,6 +8,7 @@ print your directory on shell and clipboard.
 - Bash
 ```sh
 npm i -g print-dir
+pdir -h
 pdir [.] [-t ./theme.json] [--igd "node,theme"] [--sort dir] [-o ./out.txt] [-m 5]
 ```
 
