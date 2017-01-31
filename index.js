@@ -119,13 +119,14 @@ function generateDirectoryStr(dirname, theme, maxLev, ignoresDir=[], ignoresFile
     })
     
     let outString = level==1 ? SP + path.basename(path.resolve(dirname)) + theme.dir_suffix  : ''
-    if(isLine && outString!='') {
-        console.log(colors.blue(outString))
+
+    if(outString!='') {
+        isLine && console.log(colors.blue(outString))
         outString = newLine(outString)
     }
-    
 
-    return stats.reduce((prev, next, index) => {
+
+    var tree = stats.reduce((prev, next, index, all) => {
 
         let newDepthArr = level==1 ? [] : depth.slice(0)
         let isLast = index == stats.length-1
@@ -161,6 +162,7 @@ function generateDirectoryStr(dirname, theme, maxLev, ignoresDir=[], ignoresFile
 
     }, outString)
 
+    return level === 1 ? tree.replace(new RegExp( NL+"$"), '') : tree;
 }
 
 
